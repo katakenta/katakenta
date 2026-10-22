@@ -1,16 +1,45 @@
-## Hi there 👋
+# 片桐健太 / Kenta Katagiri
 
-<!--
-**katakenta/katakenta** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+合同会社一石億鳥 代表。Meta広告の運用代行と、広告運用の内製化支援をしています。
 
-Here are some ideas to get you started:
+自分ではコードを書きません。毎日 Claude Code に仕事を頼み、仕事の道具そのものも Claude Code に作ってもらっています。
+このページは、そうして作ってきた道具の紹介です（コードは顧客の情報を含むため非公開です）。
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+*I don't write code myself. Every tool below was built by giving instructions to Claude Code.*
+
+---
+
+## 作ってきた道具
+
+### 朝の秘書
+毎朝、全案件の台帳（案件ごとの進捗メモ）から「判断待ち」を機械で抜き出し、AI が「今日決めること」を3件まで選んで Discord に届けます。
+同じ内容を手描き風のダッシュボードにも出し、「済んだ」「今日はやらない」を押した記録は翌朝の選定に反映されます。
+
+### 自動化の見張り
+定時に動く処理を全部1つの台帳に登録し、「発火していない」「生成物が無い」「異常終了した」を毎朝チェックします。
+自動化は壊れてもエラーを出さず、ただ止まるだけ。それを人が気づく前に拾うための道具です。
+
+### 広告運用ダッシュボード
+Meta広告の数値を API から取得して、案件ごとに日次・週次で見られる社内ダッシュボードです（Cloudflare Workers で稼働）。
+数字が0のとき、それが「実績ゼロ」なのか「取得が壊れている」のかを区別して表示するルールを入れています。
+
+### 集客から売上までの可視化（作成中）
+各媒体から登録、売上までの流れを、矢印の太さで追えるようにする仕組みです。広告費・売上・ROAS・ROI まで自動で集計する設計です。
+
+### LINE の日程調整 Bot「すず」
+社会人バンドの練習日が決まらない、という自分の困りごとから作った LINE Bot です。候補日を出して、メンバーの回答を集めて、日程を決めます。（Claude Code と Codex で開発）
+
+### 毎朝の音声から発信まで
+朝に話した録音を文字起こしし、note の記事・X の投稿・YouTube 動画の台本の下書きまでをつなげています。
+
+### AI の失敗を仕組みで止める hook
+AI が同じ失敗をしないように、Claude Code の hook で機械的に止めています。
+- バックアップの無いファイルの削除・上書きを止める
+- 文章の指摘を受けたら検査ルールに1行足し、次に書いた瞬間に検査する
+- 依頼文の内容に合わせて、社内の手順書を自動で読み込ませる
+
+---
+
+## リンク
+- 会社: 合同会社一石億鳥
+- X: [@katagiri_ad](https://x.com/katagiri_ad)
